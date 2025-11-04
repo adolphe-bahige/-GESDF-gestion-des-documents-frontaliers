@@ -14,10 +14,10 @@
 <body>
     <section class="w-full h-screen flex items-center ">
         <div class="w-1/2 h-full hidden lg:flex justify-between bg-[whitesmoke]">
-            <img src="../../images/Login.gif" alt="" class="w-full h-full">
+            <img src="../../images/sign-in-animate.svg" alt="" class=" object-cover">
         </div>
 
-        <div class="w-full h-full flex flex-col justify-center items-center lg:w-1/2">
+        <div class="w-full h-full flex flex-col justify-center items-center lg:w-1/2 bg-white">
             <div class=" w-[90%] h-auto flex flex-col justify-center gap-6 md:w-[65%]">
                 <div class="flex flex-col gap-2 text-center md:text-start">
                     <h1 class="font-semibold text-2xl font-[cursive] md:text-3xl">Bienvenue dans notre systeme</h1>

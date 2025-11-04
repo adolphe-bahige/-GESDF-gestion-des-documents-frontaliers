@@ -14,7 +14,7 @@
 <body>
     <section class="w-full h-screen flex items-center">
         <div class="w-1/2 h-full hidden lg:flex justify-between bg-[whitesmoke]">
-            <img src="../../images/Sign up.gif" alt="" class="w-full h-full">
+            <img src="../../images/sign-up-animate.svg" alt="" class="w-full h-full">
         </div>
 
         <div class="w-full h-full flex justify-center items-center lg:w-1/2">

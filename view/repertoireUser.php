@@ -56,19 +56,19 @@ include '../models/search.php';
                     <div class="w-full h-auto flex flex-col gap-1 text-sm">
                         <!-- head -->
 
-                        <div class="border w-full h-auto flex font-medium rounded bg-[whitesmoke]">
+                        <div class="border w-full h-auto flex font-medium rounded-sm bg-[whitesmoke]">
                             <div class="w-[12%] h-auto p-1">N<sup>o</sup> du docmt</div>
                             <div class="w-[18%] h-auto p-1">Nom complet</div>
                             <div class="w-[11%] h-auto p-1">Nationalite</div>
                             <div class="w-[12%] h-auto p-1">Profession</div>
                             <div class="w-[10%] h-auto p-1">Type-docmt</div>
-                            <div class="w-[6%] h-auto p-1">Statut</div>
-                            <div class="w-[13%] h-auto p-1 ">Admin</div>
-                            <div class="w-[18%] h-auto p-1">Actions</div>
+                            <div class="w-[8%] h-auto p-1">Statut</div>
+                            <div class="w-[13%] h-auto p-1">Admin</div>
+                            <div class="w-[16%] h-auto p-1">Actions</div>
                         </div>
                         <!-- tobody -->
                         <?php foreach ($documents as $key => $document): ?>
-                            <div class="border w-full h-auto flex  rounded">
+                            <div class="border w-full h-auto flex text-sm rounded-sm">
                                 <div class="w-[12%] h-auto p-1"><?= $document['num_document'] ?></div>
                                 <div class="w-[18%] h-auto p-1"><?= $document['doc_name'] ?></div>
                                 <div class="w-[11%] h-auto p-1"><?= $document['nationality'] ?></div>
@@ -77,22 +77,21 @@ include '../models/search.php';
                                 <?php
                                 if ($document['statut'] == 'valide') {
                                 ?>
-                                    <div class="w-[6%] h-auto p-1 flex items-center">
+                                    <div class="w-[8%] h-auto p-1 flex items-center">
                                         <p class="bg-green-400 rounded-md px-3 text-white "><?= $document['statut'] ?></p>
                                     </div>
                                 <?php
                                 } else {
                                 ?>
-                                    <div class="w-[6%] h-auto p-1 flex items-center">
+                                    <div class="w-[8%] h-auto p-1 flex items-center">
                                         <p class="bg-red-400 rounded-md px-3 text-white "><?= $document['statut'] ?></p>
                                     </div>
                                 <?php
                                 }
                                 ?>
                                 <div class="w-[13%] h-auto px-2"><?= $document['admin_name'] ?></div>
-                                <div class="w-[18%] h-auto p-1 flex justify-around">
+                                <div class="w-[16%] h-auto p-1 flex justify-around text-xs border">
                                     <a href="./profilUser.php?id=<?= $document['id'] ?>" class="text-blue-500 underline">Modifier</a>
-                                    <!-- <a href="../models/deleteDoc.php?id=<?= $document['id'] ?>" class="text-red-500 font-medium underline">Supprimer</a> -->
                                     <a href="./addJourney.php?num_doc=<?= $document['num_document'] ?>" class="text-blue-500 underline">Entr/Sort</a>
                                     <a href="./profilUser.php?id=<?= $document['id'] ?>" class="text-blue-500 underline">Profile</a>
                                 </div>
