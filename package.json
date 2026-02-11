@@ -82,7 +82,7 @@
     "@iconify/tailwind": "^1.1.3"
   },
   "scripts": {
-    "watch": "tailwindcss -i ./input.css -o ./output.css --watch"
+    "dev": "tailwindcss -i ./input.css -o ./output.css --watch"
   },
   "keywords": [],
   "author": "",

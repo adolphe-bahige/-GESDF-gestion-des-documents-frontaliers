@@ -13,3 +13,5 @@ Thumbs.db
 .idea/
 #cache divers
 *.cache
+# base de données
+gestion-docs.sql

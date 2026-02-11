@@ -90,7 +90,7 @@ include '../models/search.php';
                                 }
                                 ?>
                                 <div class="w-[13%] h-auto px-2"><?= $document['admin_name'] ?></div>
-                                <div class="w-[16%] h-auto p-1 flex justify-around text-xs border">
+                                <div class="w-[16%] h-auto p-1 flex justify-around text-xs">
                                     <a href="./profilUser.php?id=<?= $document['id'] ?>" class="text-blue-500 underline">Modifier</a>
                                     <a href="./addJourney.php?num_doc=<?= $document['num_document'] ?>" class="text-blue-500 underline">Entr/Sort</a>
                                     <a href="./profilUser.php?id=<?= $document['id'] ?>" class="text-blue-500 underline">Profile</a>

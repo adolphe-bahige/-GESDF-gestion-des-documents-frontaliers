@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 22 sep. 2025 à 08:49
+-- Généré le : mer. 11 fév. 2026 à 11:26
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -42,9 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `email`, `password`, `role`, `photo`, `created_at`) VALUES
-(1, 'Jeremie bisimwa', 'jeremi@gmail.com', 'fc852b8065b97c81c33dccaa3e2f1a0cd74dccfe', 'administrateur', 'IMG_0582.PNG', '2025-06-10 16:05:11'),
-(2, 'Afia dorcas', 'adolphe@gmail.com', '4aff48958f8f555afdde6bc438be8bbf96947e7d', 'administrateur', NULL, '2025-06-10 16:47:19'),
-(3, 'Jean raha', 'jean@gmail.com', 'ad882a447898b0242730d9780726102e73be49b4', 'administrateur', NULL, '2025-06-11 09:44:32');
+(4, 'Adolphe', 'adolphe@gmail.com', 'fc852b8065b97c81c33dccaa3e2f1a0cd74dccfe', 'administrateur', 'IMG-20240206-WA0070.jpg', '2025-11-04 13:47:02');
 
 -- --------------------------------------------------------
 
@@ -72,14 +70,9 @@ CREATE TABLE `documents` (
 --
 
 INSERT INTO `documents` (`id`, `id_admin`, `name`, `nationality`, `profession`, `type_document`, `validity`, `invalidity`, `photo`, `num_document`, `created_at`, `statut`) VALUES
-(1, 1, 'Julia julian', 'congolaise', 'etudiant', 'cpgl', '2025-06-12', '2026-06-12', 'IMG_0582.PNG', '257101', '2025-06-10 16:07:38', 'valide'),
-(2, 1, 'Rukundo gaspard', 'burundaise', 'etudiant', 'passe-port', '2025-06-19', '2035-06-20', 'IMG_0580.JPG', '257202', '2025-06-10 16:09:37', 'valide'),
-(4, 2, 'Adolphe  bhg', 'congolaise', 'developpeur', 'passe-port', '2025-06-25', '2025-06-19', 'IMG_0569.JPG', '257403', '2025-06-10 16:49:49', 'expiré'),
-(5, 1, 'Jeremie', 'congolaise', 'developpeur', 'passe-port', '2025-06-19', '2035-06-19', 'IMG_0581.JPG', '257504', '2025-06-11 08:27:54', 'valide'),
-(6, 1, 'Julia ishimiye', 'burundaise', 'professeur', 'cpgl', '2025-06-11', '2025-06-10', 'IMG_0580.JPG', '257605', '2025-06-11 08:35:51', 'expiré'),
-(7, 1, 'Adolphe ', 'congolaise', 'etudiant', 'cpgl', '2025-06-12', '2026-06-12', 'IMG_0582.PNG', '257706', '2025-06-11 09:31:10', 'valide'),
-(8, 1, 'Jeremie bisimwa', 'congolaise', 'etudiant', 'passe-port', '2025-06-18', '2035-06-20', 'IMG_0582.PNG', '257807', '2025-06-12 09:22:01', 'valide'),
-(9, 1, 'Afia dorcas', 'francaise', 'professeur', 'passe-port', '2025-06-12', '2025-06-20', 'IMG_0582.PNG', '257908', '2025-06-12 09:26:25', 'expiré');
+(10, 4, 'Jeremie bisimwa', 'congolaise', 'developpeur', 'cpgl', '2025-01-20', '2026-01-21', 'IMG-20240206-WA0069.jpg', '2571001', '2025-11-04 13:52:49', 'expiré'),
+(11, 4, 'Johnson jc', 'congolaise', 'etudiant', 'cpgl', '2024-02-10', '2025-02-11', 'Screenshot_20240130-160853.png', '2571102', '2025-11-04 14:04:23', 'expiré'),
+(12, 4, 'Donnel irakoze', 'burundaise', 'Entrepreneur', 'passe-port', '2022-04-20', '2032-04-21', '1754912442554.jpg', '2571203', '2025-11-04 14:32:30', 'valide');
 
 -- --------------------------------------------------------
 
@@ -103,9 +96,11 @@ CREATE TABLE `entrer_sortie` (
 --
 
 INSERT INTO `entrer_sortie` (`id`, `id_admin`, `id_document`, `num_document`, `enter_sortie`, `lieu_dest`, `motif`, `created_at`) VALUES
-(1, 1, 2, '257202', 'sortie', 'uvira', 'vacances', '2025-06-10 16:15:11'),
-(2, 2, 4, '257403', 'entrer', 'bujumbura', 'travail', '2025-06-10 16:51:30'),
-(3, 1, 8, '257807', 'entrer', 'bukavu', 'vacances', '2025-06-12 09:23:27');
+(1, NULL, 2, '257202', 'sortie', 'uvira', 'vacances', '2025-06-10 16:15:11'),
+(2, NULL, 4, '257403', 'entrer', 'bujumbura', 'travail', '2025-06-10 16:51:30'),
+(3, NULL, 8, '257807', 'entrer', 'bukavu', 'vacances', '2025-06-12 09:23:27'),
+(4, 4, 10, '2571001', 'entrer', 'bujumbura', 'Etudes', '2025-11-04 14:07:04'),
+(5, 4, 12, '2571203', 'sortie', 'goma', 'Tourisme ', '2025-11-04 14:33:02');
 
 -- --------------------------------------------------------
 
@@ -134,7 +129,10 @@ INSERT INTO `notifications` (`id`, `num_document`, `message`, `actions`, `create
 (6, '257605', 'Un nouveau cpgl a été enregistré au nom de : Julia ishimiye', 'enregistrement', '2025-06-11 08:35:51'),
 (7, '257706', 'Un nouveau cpgl a été enregistré au nom de : Adolphe ', 'enregistrement', '2025-06-11 09:31:10'),
 (8, '257807', 'Un nouveau passe-port a été enregistré au nom de : Jeremie bisimwa', 'enregistrement', '2025-06-12 09:22:01'),
-(9, '257908', 'Un nouveau passe-port a été enregistré au nom de : Afia dorcas', 'enregistrement', '2025-06-12 09:26:26');
+(9, '257908', 'Un nouveau passe-port a été enregistré au nom de : Afia dorcas', 'enregistrement', '2025-06-12 09:26:26'),
+(10, '2571001', 'Un nouveau cpgl a été enregistré au nom de : Jeremie bisimwa', 'enregistrement', '2025-11-04 13:52:49'),
+(11, '2571102', 'Un nouveau cpgl a été enregistré au nom de : Johnson jc', 'enregistrement', '2025-11-04 14:04:23'),
+(12, '2571203', 'Un nouveau passe-port a été enregistré au nom de : Donnel irakoze', 'enregistrement', '2025-11-04 14:32:30');
 
 --
 -- Index pour les tables déchargées
@@ -175,25 +173,25 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `entrer_sortie`
 --
 ALTER TABLE `entrer_sortie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Contraintes pour les tables déchargées
